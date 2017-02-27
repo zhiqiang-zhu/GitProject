@@ -1,0 +1,8 @@
+C:\Users\Administrator\Desktop\WriteFile\WriteFile\bin\Debug\WriteFile.exe.config
+C:\Users\Administrator\Desktop\WriteFile\WriteFile\bin\Debug\WriteFile.exe
+C:\Users\Administrator\Desktop\WriteFile\WriteFile\bin\Debug\WriteFile.pdb
+C:\Users\Administrator\Desktop\WriteFile\WriteFile\obj\Debug\WriteFile.Form1.resources
+C:\Users\Administrator\Desktop\WriteFile\WriteFile\obj\Debug\WriteFile.Properties.Resources.resources
+C:\Users\Administrator\Desktop\WriteFile\WriteFile\obj\Debug\WriteFile.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\WriteFile\WriteFile\obj\Debug\WriteFile.exe
+C:\Users\Administrator\Desktop\WriteFile\WriteFile\obj\Debug\WriteFile.pdb
