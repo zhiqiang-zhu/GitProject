@@ -35,6 +35,7 @@ namespace WriteFile
         private void button2_Click(object sender, EventArgs e)
         {
             SaveDataReport();
+            show();
         }
 
 
@@ -139,11 +140,45 @@ namespace WriteFile
 
             string totalString = String.Format("<table align=\"center\" class=\"tab\"><caption>表1{0}隧道病害统计表</caption>" + s1 + s3 + s5 + "</table>", tunnelName);
             totalString = totalString + s6;
-            //string totalString = "<table border=\"1px\" cellspacing=\"0\" align=\"center\"><caption>表1蛇家坡隧道病害统计表</caption>" + s1 + s2 + s3 + s4 + "</table>";
 
             try
             {
                 using (FileStream fs = new FileStream(textBox2.Text, FileMode.Create))
+                {
+                    byte[] arrwritedata = Encoding.Default.GetBytes(totalString);
+                    fs.Write(arrwritedata, 0, arrwritedata.Length);
+                    //MessageBox.Show("生成数据报表成功！！！");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("异常" + ex.Message);
+            }
+
+
+           
+        }
+
+        private void show()
+        {
+            int max = 20;
+            string totalString = "";
+            string tableHead = "<table class=\"tab\" align=\"center\"><caption>表2蛇家坡隧道右幅土建结构状况评价表1</caption>" + 
+                               "<tr><th>里程桩号</th><th>位置</th><th>病害类型</th><th>病害情况描述</th><th>照片编号</th><th>备注</th>	</tr>";
+            
+            for (int i = 1; i <= max; i++)
+            {
+
+                string str = String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td>{4}</td><td>{5}</td>	</tr>", "RK3 + 285", "左/右盖板", "缺失", "缺失和破损需要统计个数",i,"");
+                totalString += str;                
+            }
+
+            string tableTail = "</table>";
+            totalString = tableHead + totalString;
+            totalString += tableTail;
+            try
+            {
+                using (FileStream fs = new FileStream(textBox2.Text, FileMode.Append))
                 {
                     byte[] arrwritedata = Encoding.Default.GetBytes(totalString);
                     fs.Write(arrwritedata, 0, arrwritedata.Length);

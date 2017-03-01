@@ -14,4 +14,3 @@ F:\2016-2017-master1\GitProject\WriteFile\WriteFile\bin\Debug\WriteFile.pdb
 F:\2016-2017-master1\GitProject\WriteFile\WriteFile\obj\Debug\WriteFile.Form1.resources
 F:\2016-2017-master1\GitProject\WriteFile\WriteFile\obj\Debug\WriteFile.Properties.Resources.resources
 F:\2016-2017-master1\GitProject\WriteFile\WriteFile\obj\Debug\WriteFile.csproj.GenerateResource.Cache
-F:\2016-2017-master1\GitProject\WriteFile\WriteFile\obj\Debug\WriteFile.csprojResolveAssemblyReference.cache
