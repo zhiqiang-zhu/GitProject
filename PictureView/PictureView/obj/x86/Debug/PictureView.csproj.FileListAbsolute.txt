@@ -20,3 +20,11 @@ C:\Users\Administrator\Desktop\20170302\C#\PictureView\bin\Debug\图片查看器
 C:\Users\Administrator\Desktop\20170302\C#\PictureView\obj\x86\Debug\图片查看器.Form1.resources
 C:\Users\Administrator\Desktop\20170302\C#\PictureView\obj\x86\Debug\图片查看器.Properties.Resources.resources
 C:\Users\Administrator\Desktop\20170302\C#\PictureView\obj\x86\Debug\PictureView.csproj.GenerateResource.Cache
+F:\2016-2017-master1\GitProject\PictureView\PictureView\obj\x86\Debug\图片查看器.Form1.resources
+F:\2016-2017-master1\GitProject\PictureView\PictureView\obj\x86\Debug\图片查看器.Properties.Resources.resources
+F:\2016-2017-master1\GitProject\PictureView\PictureView\obj\x86\Debug\PictureView.csproj.GenerateResource.Cache
+F:\2016-2017-master1\GitProject\PictureView\PictureView\bin\Debug\图片查看器.exe
+F:\2016-2017-master1\GitProject\PictureView\PictureView\bin\Debug\图片查看器.pdb
+F:\2016-2017-master1\GitProject\PictureView\PictureView\obj\x86\Debug\图片查看器.exe
+F:\2016-2017-master1\GitProject\PictureView\PictureView\obj\x86\Debug\图片查看器.pdb
+F:\2016-2017-master1\GitProject\PictureView\PictureView\obj\x86\Debug\PictureView.csprojResolveAssemblyReference.cache

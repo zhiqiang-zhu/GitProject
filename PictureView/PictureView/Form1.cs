@@ -165,35 +165,18 @@ namespace 图片查看器
         }
 
 
-        private static Bitmap Resize(Bitmap bmp, int newW, int newH)
+        /*
+        private static Bitmap Resize(Bitmap bmp, double scale)
         {
             try
             {
-                System.Drawing.Image sourImg = bmp;
-                int width = 0, height = 0;
+                Image sourImg = bmp;
+                double newWidth = 0, newHeight = 0;
                 //按比例系数进行缩放
-                int sourWidth = sourImg.Width;
-                int sourHeight = sourImg.Height;
-                if (sourHeight > newH || sourWidth > newW) 
-                {
-                    if ((sourWidth * newH) > (sourHeight * newW)) 
-                    {
-                        width = newW;
-                        height = (newW * sourHeight) / sourWidth;
-                    }
-                    else
-                    {
-                        height = newH;
-                        width = (newH * sourWidth) / sourHeight;
-                    }
-                }
-                else
-                {
-                    width = sourWidth;
-                    height = sourHeight;
-                }
+                newWidth = sourImg.Width*scale;
+                newHeight=sourImg.Height*scale;
 
-                Bitmap destBitmap = new Bitmap(newW, newH);
+                Bitmap destBitmap = new Bitmap((int)newWidth,(int)newHeight);
                 Graphics g = Graphics.FromImage(destBitmap);
                 g.Clear(Color.Transparent);
                 //设置画布的描绘质量
@@ -201,8 +184,7 @@ namespace 图片查看器
                 g.SmoothingMode = SmoothingMode.HighQuality;
                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
 
-                g.DrawImage(sourImg, new Rectangle((newW-width)/2,(newH-height)/2,width,height),0,0,sourImg.Width,sourImg.Height,GraphicsUnit.Pixel);
-
+                g.DrawImage(sourImg, new Rectangle(0,0,(int)newWidth,(int)newHeight),new Rectangle(0,0,sourImg.Width,sourImg.Height), GraphicsUnit.Pixel);
                 g.Dispose();
                 sourImg.Dispose();
                 return destBitmap;
@@ -212,11 +194,80 @@ namespace 图片查看器
                 return null;
             }
         }
+        
+
+        public static Bitmap KiResizeImage(Bitmap bmp, int newW, int newH)
+        {
+            try
+            {
+                Bitmap b = new Bitmap(newW, newH);
+                Graphics g = Graphics.FromImage(b);
+                // 插值算法的质量
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.DrawImage(bmp, new Rectangle(0, 0, newW, newH), new Rectangle(0, 0, bmp.Width, bmp.Height), GraphicsUnit.Pixel);
+                g.Dispose();
+                return b;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        */
+
+
+        public static Bitmap GetThumbnail(Bitmap b, int destHeight, int destWidth)
+        {
+            System.Drawing.Image imgSource = b;
+            System.Drawing.Imaging.ImageFormat thisFormat = imgSource.RawFormat;
+            int sW = 0, sH = 0;
+            // 按比例缩放           
+            int sWidth = imgSource.Width;
+            int sHeight = imgSource.Height;
+            if (sHeight > destHeight || sWidth > destWidth)
+            {
+                if ((sWidth * destHeight) > (sHeight * destWidth))
+                {
+                    sW = destWidth;
+                    sH = (destWidth * sHeight) / sWidth;
+                }
+                else
+                {
+                    sH = destHeight;
+                    sW = (sWidth * destHeight) / sHeight;
+                }
+            }
+            else
+            {
+                sW = sWidth;
+                sH = sHeight;
+            }
+            Bitmap outBmp = new Bitmap(destWidth, destHeight);
+            Graphics g = Graphics.FromImage(outBmp);
+            g.Clear(Color.Transparent);
+            // 设置画布的描绘质量         
+            g.CompositingQuality = CompositingQuality.HighQuality;
+            g.SmoothingMode = SmoothingMode.HighQuality;
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            g.DrawImage(imgSource, new Rectangle((destWidth - sW) / 2, (destHeight - sH) / 2, sW, sH), 0, 0, imgSource.Width, imgSource.Height, GraphicsUnit.Pixel);
+            g.Dispose();
+            // 以下代码为保存图片时，设置压缩质量     
+            EncoderParameters encoderParams = new EncoderParameters();
+            long[] quality = new long[1];
+            quality[0] = 100;
+            EncoderParameter encoderParam = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, quality);
+            encoderParams.Param[0] = encoderParam;
+            imgSource.Dispose();
+            return outBmp;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //picBoxView.SizeMode = PictureBoxSizeMode.Zoom;
             Bitmap b = new Bitmap(picBoxView.Image);
-            Bitmap c = Resize(b,128,32);
+            //Bitmap c = GetThumbnail(b,1024,256);
+            Bitmap c = GetThumbnail(b, 6144,512);
             picBoxView.Image = c;
         }
     }
