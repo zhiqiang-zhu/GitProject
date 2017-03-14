@@ -1,0 +1,13 @@
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\bin\Debug\VerticalSlider.exe.config
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\VerticalSlider.csprojResolveAssemblyReference.cache
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\MainWindow.baml
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\MainWindow.g.cs
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\App.g.cs
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\VerticalSlider_MarkupCompile.cache
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\VerticalSlider.g.resources
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\VerticalSlider.Properties.Resources.resources
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\VerticalSlider.csproj.GenerateResource.Cache
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\bin\Debug\VerticalSlider.exe
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\bin\Debug\VerticalSlider.pdb
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\VerticalSlider.exe
+C:\Users\ZHUZQ\Desktop\VerticalSlider\VerticalSlider\obj\Debug\VerticalSlider.pdb
