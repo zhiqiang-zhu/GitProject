@@ -29,5 +29,10 @@ namespace VerticalSlider
         {
             throw new NotImplementedException();
         }
+
+        public void pt(string s)
+        {
+            MessageBox.Show(s);
+        }
     }
 }
